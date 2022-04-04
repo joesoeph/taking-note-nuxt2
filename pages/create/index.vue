@@ -55,6 +55,7 @@ export default {
           this.title = null
           this.note = null
           alert('Successfully created note')
+          this.$router.push('/')
         }
       })
       .catch((error) => {

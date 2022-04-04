@@ -2,7 +2,7 @@
   <span>
       <HeaderNav/>
       <div class="container px-4 mx-auto">
-        <Nuxt keep-alive :keep-alive-props="{ max: 10 }"/>
+        <Nuxt/>
       </div>
   </span>
 </template>

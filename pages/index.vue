@@ -18,7 +18,7 @@
         </div>
       </div>
       <div v-else>
-        <NoteListPlain v-for="(item, index) in notes" :key="index" :background-image="item.image" :slug="item.id" :created-at="humanDate(item.created_at)" :title="item.title" @delete-note="ngapus(index, item.id)"/>
+        <NoteListPlain v-for="(item, index) in notes" :key="index" :background-image="item.image" :slug="item.id" :created-at="humanDate(item.created_at)" :title="item.title" @delete-note="remove(index, item.id)"/>
       </div>
     </client-only>
   </div>
@@ -41,7 +41,7 @@ export default {
     humanDate(date) {
       return this.$hDate(date)
     },
-    ngapus(index, id) {
+    remove(index, id) {
       if (confirm('Are you sure?')) {
         this.$axios.delete(`${domain}/notes/${id}`)
         .then((response) => {

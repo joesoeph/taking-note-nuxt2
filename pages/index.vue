@@ -91,7 +91,8 @@ export default {
         this.$axios.delete(`${domain}/notes/${id}`)
         .then((response) => {
           if (response.status === 200) {
-            this.notes.splice(index, 1)
+            let filteredArray = this.notes.filter(value => value.id !== id);
+            this.notes = filteredArray
           }
         })
         .catch((error) => {

@@ -32,7 +32,6 @@ export default {
   async fetch() {
     const response = await this.$axios.get(`${domain}/notes/${this.slug}`)
     this.note = response.data
-    console.log(response.data)
   },
   methods: {
     humanDate(date) {

@@ -1,6 +1,6 @@
 <template>
   <span>
-      <HeaderNav/>
+      <LazyHeaderNav/>
       <div class="container px-4 mx-auto">
         <Nuxt/>
       </div>

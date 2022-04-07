@@ -3,7 +3,8 @@
     <client-only>
       <div v-if="$fetchState.pending || $fetchState.error">Loading...</div>
       <div v-else class="flex flex-col bg-white rounded-b-2xl filter drop-shadow-lg">
-        <div :style="{'backgroundImage': `url(${note.image})`}" class="w-full bg-center bg-no-repeat bg-cover rounded-t-2xl h-96"></div>
+        <div v-lazy:background-image="srcUrl" class="w-full bg-center bg-no-repeat bg-cover rounded-t-2xl h-96"></div>
+
         <div class="p-8">
           <h1 class="text-4xl font-semibold text-gray-600 ">{{ note.title }}</h1>
           <span class="mt-3 text-sm font-light text-gray-600">{{ humanDate(note.created_at) }}</span>
@@ -38,5 +39,13 @@ export default {
       return this.$hDate(date)
     }
   },
+  computed: {
+    srcUrl() {
+      return this.note.image
+    },
+    placeholderUrl() {
+      return '/icon.png'
+    },
+  }
 }
 </script>

@@ -24,6 +24,7 @@ export default {
     '~/plugins/fontawesome.js',
     '~/plugins/hello.js',
     '~/plugins/humandate.js',
+    '~/plugins/vue-lazyload',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
